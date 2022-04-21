@@ -193,7 +193,7 @@ module Danger
           "you should turn off smart quotes in your editor of choice.".red
       end
 
-      if contents.include?("puts")
+      if contents.include?("puts") && !ENV['DANGER_DISABLE_PUTS_WARNING']
         ui.puts "You used `puts` in your Dangerfile. To print out text to GitHub use `message` instead"
       end
 
